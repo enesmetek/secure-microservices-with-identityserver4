@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rc/HlkozxrqcKFEfHh+gf3sVAInH2TMqeWyHGEFJCGM=",
+  "Hash": "XkfrAo58Lq5Ufs/vQbEAh3qBW2EGaRZkV8FSbDmXwWk=",
   "Source": "Movies.API",
   "BasePath": "_content/Movies.API",
   "Mode": "Default",
@@ -47,10 +47,10 @@
       "OriginalItemSpec": "C:\\Users\\enes.kafali\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.2\\staticwebassets\\QuickGrid.razor.js"
     },
     {
-      "Identity": "C:\\Users\\enes.kafali\\source\\repos\\SecureMicroservices\\Movies.API\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Movies.API.styles.css",
+      "Identity": "C:\\Users\\enes.kafali\\source\\repos\\secure-microservices-with-identityserver4\\Movies.API\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Movies.API.styles.css",
       "SourceId": "Movies.API",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\enes.kafali\\source\\repos\\SecureMicroservices\\Movies.API\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\enes.kafali\\source\\repos\\secure-microservices-with-identityserver4\\Movies.API\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/Movies.API",
       "RelativePath": "Movies.API.styles.css",
       "AssetKind": "All",
@@ -63,7 +63,7 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\enes.kafali\\source\\repos\\SecureMicroservices\\Movies.API\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Movies.API.styles.css"
+      "OriginalItemSpec": "C:\\Users\\enes.kafali\\source\\repos\\secure-microservices-with-identityserver4\\Movies.API\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Movies.API.styles.css"
     }
   ]
 }

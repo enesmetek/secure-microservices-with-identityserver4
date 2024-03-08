@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Movies.API.Persistance.Context;
 using Movies.API.Persistance.Seed;
 
@@ -9,8 +10,23 @@ namespace Movies.API
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
             builder.Services.AddDbContext<MoviesAPIContext>(options =>
                 options.UseInMemoryDatabase("Movies"));
+
+            builder.Services.AddAuthentication("Bearer")
+                .AddJwtBearer("Bearer", opt =>
+                {
+                    opt.Authority = "https://localhost:7196/";
+                    opt.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateAudience = false,
+                    };
+                });
+            builder.Services.AddAuthorization(opt =>
+            {
+                opt.AddPolicy("ClientIDPolicy", policy => policy.RequireClaim("client_id", "movieClient"));
+            });
 
             // Add services to the container.
 
@@ -31,6 +47,7 @@ namespace Movies.API
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
 
