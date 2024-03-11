@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Movies.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+83c1942ab2d4fb7d35f195ec4e24d6ca632b17a9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+068760b394db9d60ca7e67a093a79ccd9c9cd57f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Movies.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Movies.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
