@@ -37,3 +37,6 @@ C:\Users\enes.kafali\source\repos\secure-microservices-with-identityserver4\Iden
 C:\Users\enes.kafali\source\repos\secure-microservices-with-identityserver4\IdentityServer\obj\Debug\net8.0\IdentityServer.pdb
 C:\Users\enes.kafali\source\repos\secure-microservices-with-identityserver4\IdentityServer\obj\Debug\net8.0\IdentityServer.genruntimeconfig.cache
 C:\Users\enes.kafali\source\repos\secure-microservices-with-identityserver4\IdentityServer\obj\Debug\net8.0\ref\IdentityServer.dll
+C:\Users\enes.kafali\source\repos\secure-microservices-with-identityserver4\IdentityServer\bin\Debug\net8.0\IdentityServer.staticwebassets.runtime.json
+C:\Users\enes.kafali\source\repos\secure-microservices-with-identityserver4\IdentityServer\obj\Debug\net8.0\IdentityServer.RazorAssemblyInfo.cache
+C:\Users\enes.kafali\source\repos\secure-microservices-with-identityserver4\IdentityServer\obj\Debug\net8.0\IdentityServer.RazorAssemblyInfo.cs
