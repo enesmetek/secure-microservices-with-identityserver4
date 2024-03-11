@@ -243,3 +243,4 @@ C:\Users\enes.kafali\source\repos\secure-microservices-with-identityserver4\Movi
 C:\Users\enes.kafali\source\repos\secure-microservices-with-identityserver4\Movies.Client\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\enes.kafali\source\repos\secure-microservices-with-identityserver4\Movies.Client\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\enes.kafali\source\repos\secure-microservices-with-identityserver4\Movies.Client\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\enes.kafali\source\repos\secure-microservices-with-identityserver4\Movies.Client\bin\Debug\net8.0\IdentityModel.dll

@@ -17,7 +17,7 @@ namespace Movies.API
             builder.Services.AddAuthentication("Bearer")
                 .AddJwtBearer("Bearer", opt =>
                 {
-                    opt.Authority = "https://localhost:7196/";
+                    opt.Authority = "https://localhost:5005/";
                     opt.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateAudience = false,
