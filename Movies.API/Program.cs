@@ -25,7 +25,7 @@ namespace Movies.API
                 });
             builder.Services.AddAuthorization(opt =>
             {
-                opt.AddPolicy("ClientIDPolicy", policy => policy.RequireClaim("client_id", "movieClient"));
+                opt.AddPolicy("ClientIDPolicy", policy => policy.RequireClaim("client_id", "movies_mvc_client"));
             });
 
             // Add services to the container.
