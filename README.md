@@ -1,4 +1,3 @@
-
 # Securing Microservices with IdentityServer4
 
 A practice project on how to secure microservices with using standalone Identity Server 4 and backing with Ocelot API Gateway.
@@ -63,7 +62,7 @@ After Ocelot reroutes the request to the internal API, it will present the token
 ```http
   GET /api/movies
 ```
-#### Get Customer
+#### Get Movie
 
 ```http
   GET /api/movies/{id}
