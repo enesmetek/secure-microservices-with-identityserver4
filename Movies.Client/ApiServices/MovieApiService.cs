@@ -1,13 +1,17 @@
-﻿using Movies.Client.Models;
+﻿using IdentityModel.Client;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+using Movies.Client.Models;
 using Newtonsoft.Json;
 using System.Text;
 
 namespace Movies.Client.ApiServices
 {
-    public class MovieApiService(IHttpClientFactory httpClientFactory) : IMovieApiService
+    public class MovieApiService(IHttpClientFactory httpClientFactory, IHttpContextAccessor httpContextAccessor) : IMovieApiService
     {
         private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;
-
+        private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
+            
         public async Task<IEnumerable<Movie>?> GetMovies()
         {
             var httpClient = _httpClientFactory.CreateClient("MovieAPIClient");
@@ -45,7 +49,7 @@ namespace Movies.Client.ApiServices
             var request = new HttpRequestMessage(HttpMethod.Put, $"/api/movies/{movie.ID}");
             request.Content = new StringContent(JsonConvert.SerializeObject(movie), Encoding.UTF8, "application/json");
             await httpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead).ConfigureAwait(false);
-            return movie;   
+            return movie;
         }
 
         public async Task DeleteMovie(Guid ID)
@@ -53,6 +57,32 @@ namespace Movies.Client.ApiServices
             var httpClient = _httpClientFactory.CreateClient("MovieAPIClient");
             var request = new HttpRequestMessage(HttpMethod.Delete, $"/api/movies/{ID}");
             await httpClient.SendAsync(request, new HttpCompletionOption()).ConfigureAwait(false);
+        }
+
+        public async Task<UserInfoViewModel?> GetUserInfo()
+        {
+            var idpClient = _httpClientFactory.CreateClient("IDPClient");
+            var metaDataResponse = await idpClient.GetDiscoveryDocumentAsync();
+            if (metaDataResponse.IsError)
+            {
+                throw new HttpRequestException("Something went wrong while requesting the access token!");
+            }
+            var accessToken = await _httpContextAccessor.HttpContext.GetTokenAsync(OpenIdConnectParameterNames.AccessToken);
+            var userInfoResponse = await idpClient.GetUserInfoAsync(new UserInfoRequest
+                {
+                    Address = metaDataResponse.UserInfoEndpoint,
+                    Token = accessToken
+                });
+            if (userInfoResponse.IsError)
+            {
+                throw new HttpRequestException("Something went wrong while getting the user info!");
+            }
+            var userInfoDictionary = new Dictionary<string, string>();
+            foreach (var claim in userInfoResponse.Claims)
+            {
+                userInfoDictionary.Add(claim.Type, claim.Value);
+            }
+            return new UserInfoViewModel(userInfoDictionary);
         }
     }
 }

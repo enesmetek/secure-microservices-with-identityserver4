@@ -1,3 +1,5 @@
+using IdentityServerHost.Quickstart.UI;
+
 namespace IdentityServer
 {
     public class Program
@@ -10,7 +12,7 @@ namespace IdentityServer
                 .AddInMemoryClients(Config.Clients)
                 .AddInMemoryApiScopes(Config.ApiScopes)
                 .AddInMemoryIdentityResources(Config.IdentityResources)
-                .AddTestUsers(Config.TestUsers)
+                .AddTestUsers(TestUsers.Users)
                 .AddDeveloperSigningCredential();
             var app = builder.Build();
             
