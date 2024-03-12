@@ -56,7 +56,7 @@ namespace Movies.Client
 
             builder.Services.AddHttpClient("MovieAPIClient", client =>
             {
-                client.BaseAddress = new Uri("https://localhost:5001");
+                client.BaseAddress = new Uri("https://localhost:5010");
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
 
