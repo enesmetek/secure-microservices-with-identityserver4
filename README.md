@@ -77,7 +77,7 @@ Contributions are welcome! Feel free to submit a pull request or open an issue.
 ---
 
 ## 📧 Contact
-For any questions or issues, please reach out via GitHub Issues or email me at **[your email]**.
+For any questions or issues, please reach out via GitHub Issues or email me at **[emkafali@gmail.com]**.
 
 ---
 
