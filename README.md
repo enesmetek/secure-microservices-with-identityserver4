@@ -1,84 +1,86 @@
 # Securing Microservices with IdentityServer4
 
-A practice project on how to secure microservices with using standalone Identity Server 4 and backing with Ocelot API Gateway.
+A practical project demonstrating how to secure microservices using a standalone **IdentityServer4** for authentication and authorization, backed by **Ocelot API Gateway**.
 
-## Architectural Pattern
+## 📌 Architectural Overview
+This project follows a **microservices architecture** secured with **OAuth 2.0** and **OpenID Connect** using IdentityServer4. The key components of the system include:
 
-![Uygulama Ekran Görüntüsü](https://miro.medium.com/v2/resize:fit:4800/format:webp/1*5AVZnAGgZe4QFFTMX-6z5Q.png)
+- **Movies.API** – A protected microservice that serves movie data.
+- **Movies.Client** – An interactive MVC client secured with OpenID Connect.
+- **IdentityServer** – A standalone authentication and authorization provider.
+- **Ocelot API Gateway** – A reverse proxy that securely routes requests.
 
-### Movies.API
-First of all, i developed Movies.API and protect this API resources with IdentityServer4 OAuth 2.0 implementation. Generated JWT Token with client_credentials from IdentityServer4 and will use this token for securing Movies.API protected resources.
+---
 
-### Movies.Client
-After that, i developed Movies.Client MVC project for Interactive Client of our application. This Interactive Movies.Client application will be secured with OpenID Connect in IdentityServer4. Our client application pass credentials with logging to an Identity Server and receive back a JSON Web Token (JWT).
+## 🏗️ Project Components
 
-### IdentityServer
-Also, i developed centralized standalone Authentication Server and Identity Provider with implementing IdentityServer4.
-Identity Server4 is an open source framework which implements OpenId Connect and OAuth2 protocols for .NET Core.
-With Identity Server, we can provide authentication and access control for our web applications or Web APIs from a single point between applications or on a user basis.
+### 🎬 Movies.API
+The **Movies.API** is a microservice that serves movie-related resources. It is protected using **IdentityServer4 OAuth 2.0** implementation. A **JWT token** is generated using the **client credentials flow** from IdentityServer4, which is then required for accessing protected resources in Movies.API.
 
-### Ocelot API Gateway
-Lastly, i developed an Ocelot API Gateway and make secure protected API resources over the Ocelot API Gateway with transferring JWTs.
-Once the client has a bearer token it will call the API endpoint which is fronted by Ocelot. Ocelot is working as a reverse proxy in here.
+### 🎭 Movies.Client
+The **Movies.Client** is an **MVC-based interactive client** application. It is secured using **OpenID Connect**, ensuring user authentication through IdentityServer4. The client logs in to the Identity Server and receives a **JWT (JSON Web Token)** for subsequent requests.
 
-After Ocelot reroutes the request to the internal API, it will present the token to Identity Server in the authorization pipeline. If the client is authorized the request will be processed and a list of movies will be sent back to the client.
+### 🔐 IdentityServer
+The **IdentityServer** is a **standalone authentication server** implementing **OpenID Connect and OAuth2** for .NET applications. It serves as a centralized identity provider, managing authentication and access control for web applications and APIs.
 
+### 🛡️ Ocelot API Gateway
+The **Ocelot API Gateway** acts as a **reverse proxy** that routes requests to internal microservices securely. JWTs are transferred through the gateway, ensuring only authenticated requests are forwarded to **Movies.API**. If the token is valid, the request is processed, and the movie data is returned to the client.
 
+---
 
-## Run Locally
+## 🚀 Running the Project Locally
 
-#### Prerequisites
-- .NET 8.0
+### 📌 Prerequisites
+- **.NET 8.0** installed on your system.
 
-#### Clone the project
+### 🔧 Setup Instructions
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/enesmetek/secure-microservices-with-identityserver4.git
+   ```
+2. Navigate into the project directory:
+   ```sh
+   cd secure-microservices-with-identityserver4
+   ```
+3. Build the solution:
+   ```sh
+   dotnet build SecureMicroservices.sln
+   ```
+4. Run the application:
+   ```sh
+   dotnet run SecureMicroservices.sln
+   ```
 
-```bash
-  git clone https://github.com/enesmetek/secure-microservices-with-identityserver4.git
-```
+---
 
-#### Change direction
+## 📡 API Endpoints
+Below are the available endpoints in **Movies.API**:
 
-```bash
-  cd .\secure-microservices-with-identityserver4
-```
+| HTTP Method | Endpoint                 | Description           |
+|------------|-------------------------|-----------------------|
+| `GET`      | `/api/movies`            | Get all movies       |
+| `GET`      | `/api/movies/{id}`       | Get a specific movie |
+| `POST`     | `/api/movies`            | Create a new movie  |
+| `PUT`      | `/api/movies/{id}`       | Update an existing movie |
+| `DELETE`   | `/api/movies/{id}`       | Delete a movie       |
 
-#### Build the solution
+---
 
-```bash
-  dotnet build SecureMicroservices.sln
-```
+## 📜 License
+This project is licensed under the **MIT License**.
 
-#### Run the projects
+---
 
-```bash
-  dotnet run SecureMicroservices.sln
-```
+## 🤝 Contributing
+Contributions are welcome! Feel free to submit a pull request or open an issue.
 
-  
-## API Endpoints
+---
 
-#### Get All Movies
+## 📧 Contact
+For any questions or issues, please reach out via GitHub Issues or email me at **[your email]**.
 
-```http
-  GET /api/movies
-```
-#### Get Movie
+---
 
-```http
-  GET /api/movies/{id}
-```
+### 📢 Star the Repository ⭐
+If you found this project useful, consider giving it a star on GitHub! 😊
 
-#### Create Movie
-```http
-  POST /api/movies
-```
-#### Update Movie
-
-```http
-  PUT /api/movies/{id}
-```
-#### Delete Movie
-
-```http
-  DELETE /api/movies/{id}
-```
